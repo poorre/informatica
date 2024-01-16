@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatore e Tabellina</title>
+</head>
+<body>
+
+<script>
+  // Funzione per stampare la tabellina
+  function stampaTabellina() {
+    for (let i = 1; i <= 10; i++) {
+      console.log(i);
+    }
+  }
+
+  // Contatore che va da 1 a 5 ad intervalli di 1000 ms
+  let contatore = 1;
+  const intervallo = setInterval(() => {
+    console.log(contatore);
+
+    // Verifica se il contatore è arrivato a 5
+    if (contatore === 5) {
+      // Stampa la tabellina
+      console.log("Stampa della tabellina:");
+      stampaTabellina();
+
+      // Ferma l'intervallo dopo aver stampato la tabellina
+      clearInterval(intervallo);
+    }
+
+    // Incrementa il contatore
+    contatore++;
+
+    // Verifica se il contatore è maggiore di 5, ferma l'intervallo
+    if (contatore > 5) {
+      clearInterval(intervallo);
+    }
+  }, 1000);
+</script>
+
+</body>
+</html>

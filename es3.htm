@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contatore e Tabellina</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatore e Tabellina</title>
+    <style>
+        #output {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
 
+<div id="output"></div>
+
 <script>
-  // Funzione per stampare la tabellina
-  function stampaTabellina() {
-    for (let i = 1; i <= 10; i++) {
-      console.log(i);
+    // Funzione che verrà eseguita ad intervalli di 1000 ms
+    function startCounter() {
+        let counter = 1;
+        let outputDiv = document.getElementById("output");
+
+        // Funzione ricorsiva per aggiornare il contatore
+        function updateCounter() {
+            if (counter <= 5) {
+                // Aggiorna il contatore
+                outputDiv.innerHTML = counter;
+
+                // Passa alla riga successiva nella tabellina
+                outputDiv.innerHTML += "<br>";
+
+                // Stampa la tabellina
+                for (let i = 1; i <= 10; i++) {
+                    outputDiv.innerHTML += counter * i + "<br>";
+                }
+
+                counter++;
+
+                // Richiama la funzione dopo 1000 ms
+                setTimeout(updateCounter, 1000);
+            }
+        }
+
+        // Avvia il contatore
+        updateCounter();
     }
-  }
 
-  // Contatore che va da 1 a 5 ad intervalli di 1000 ms
-  let contatore = 1;
-  const intervallo = setInterval(() => {
-    console.log(contatore);
-
-    // Verifica se il contatore è arrivato a 5
-    if (contatore === 5) {
-      // Stampa la tabellina
-      console.log("Stampa della tabellina:");
-      stampaTabellina();
-
-      // Ferma l'intervallo dopo aver stampato la tabellina
-      clearInterval(intervallo);
-    }
-
-    // Incrementa il contatore
-    contatore++;
-
-    // Verifica se il contatore è maggiore di 5, ferma l'intervallo
-    if (contatore > 5) {
-      clearInterval(intervallo);
-    }
-  }, 1000);
+    // Chiamata alla funzione di avvio del contatore
+    startCounter();
 </script>
 
 </body>

@@ -1,0 +1,27 @@
+DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stmapa scritta</title>
+</head>
+<body>
+    <button onclick="stampaScritta()">Bottone</button>
+    <div id="output"></div>
+   <script>
+
+     function stampaScritta() {
+         var output = document.getElementById("output");
+
+         for (var i = 1; i <= 100; i++) {
+             var scritta = document.createElement("p");
+             scritta.innerText = "juve merda " + i;
+             output.appendChild(scritta);
+         }
+     }
+
+     
+   </script>
+</body>
+</html>

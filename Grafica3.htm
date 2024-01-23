@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .square {
+            width: 10px;
+            height: 10px;
+            margin: 2px;
+            float: left;
+        }
+        .even {
+            background-color: #f2f2f2;
+            border: 1px solid black;
+        }
+        .odd {
+            background-color: #d3d3d3;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+    let container = document.getElementById('container');
+    for (let i = 1; i <= 100; i++) {
+      let square = document.createElement('div');
+      square.classList.add('square');
+      if (i % 2 === 0) {
+        square.classList.add('even');
+      } else {
+        square.classList.add('odd');
+      }
+      container.appendChild(square);
+
+      if (i % 10 === 0) {
+        container.appendChild(document.createElement('br'));
+      }
+    }
+    </script>
+</body>
+</html>
+   
+
+    
 

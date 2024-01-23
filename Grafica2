@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+     <h2>Grafica 2</h2>
+   <style>
+   
+    .mioDiv {
+      border: 3px solid black;
+      width: 100px;
+      height: 100px;
+      margin: 5px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <input type="number" id="numeroDiv">
+  <button onclick="creaDiv()">crea Div</button>
+
+  <script>
+    function creaDiv() {
+      var num = document.getElementById('numeroDiv').value;
+      for (var i = 0; i < num; i++) {
+        var newDiv = document.createElement('div');
+        newDiv.className = 'mioDiv';
+        document.body.appendChild(newDiv);
+      }
+    }
+  </script>
+</body>
+</html>

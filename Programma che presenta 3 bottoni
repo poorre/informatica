@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incremento Numerico</title>
+    <style>
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        p {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1" onclick="incrementNumber(1)">Bottone 1</button>
+    <button id="btn2" onclick="incrementNumber(2)">Bottone 2</button>
+    <button id="btn3" onclick="incrementNumber(3)">Bottone 3</button>
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+
+    <script>
+        var numbers = [0, 0, 0]; // Inizializzo l'array dei numeri
+        
+        function incrementNumber(index) {
+            var output = document.getElementById("output" + index); // Ottengo il paragrafo corrispondente
+            numbers[index - 1] += getIncrementValue(index); // Incremento il valore nel vettore
+            output.textContent = numbers[index - 1]; // Mostro il nuovo valore nel paragrafo
+        }
+        
+        function getIncrementValue(index) {
+            if (index === 1) {
+                return 2;
+            } else if (index === 2) {
+                return 3;
+            } else {
+                return 7;
+            }
+        }
+    </script>
+</body>
+</html>

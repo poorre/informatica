@@ -1,89 +1,74 @@
- <img src="pizza.png" width="30" height="30" class="d-inline-block align-top" alt="LOGO">
-                Pizza
+ <!doctype html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-            </nav>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css&quot; rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+<title>Fullstack sushi</title>
+<style>
+    .navbar-custom {
+        background-color:#fffdd0 ;
+    }
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./images/Sushi.png" alt="" width="50" height="50" class="d-inline-block align-text-top">
+                Fullstack sushi
+            </a>
+        </div>
+    </nav>
 
-             <div class="container my-5 text-center" style="max-width:600px;">
-               <h1>la</h1>
-                <p class="lead" >vendi la pizza</p>
-             <button type="button" class="btn btn-primary">ciao</button> <button type="button" class="btn btn-secondary">compra la pizza</button>
-            </div>
-
-
-
-
-
-
-            <div class="container">
-              <div class="row">
-                <div class="col-sm">
-                  <div class="card" style="width: 18rem;">
-              <img src="roman.png" class="card-img-top" height="80px" width="95px" >
-              <div class="card-body">
-                <h5 class="card-title">La pizza Margherita</h5>
-                <p class="card-text">Il mito della Pizza Margherita creato da Raffaele Esposito nel 1889 come omaggio alla regina Margherita di Savoia è un fake. È una delle notizie presenti nel libro di Luca Cesari appena uscito: “Storia della Pizza. Da Napoli a Hollywood”.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-                </div>
-                <div class="col-sm">
-                   <div class="card" style="width: 18rem;">
-              <img src="roman.png" class="card-img-top" height="80px" width="95px" >
-              <div class="card-body">
-                <h5 class="card-title">La pizza Napoletana</h5>
-                <p class="card-text">Nel 1889, in occasione della visita dei reali a Napoli, la regina chiese che gli venisse portata una pizza. Il pizzaiolo Raffaele Esposito preparò allora una classica pizza rossa, a cui aggiunse della mozzarella e basilico. Il gusto piacque moltissimo alla regina, tanto che divenne il suo piatto preferito.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-                </div>
-                <div class="col-sm">
-                  <div class="card" style="width: 18rem;">
-              <img src="roman.png" class="card-img-top" height="80px" width="95px" >
-              <div class="card-body">
-                <h5 class="card-title">La pizza Boscaiola</h5>
-                <p class="card-text">
-                  La pizza è diffuso in tutta Italia, secondo alcuni il condimento sarebbe originario della montagna fra la Toscana e l'Emilia-Romagna, ma non esistono informazioni certe al riguardo. L'uso in cucina dei funghi, infatti, è pratica antichissima e diffusa in tutta la penisola..</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="container">
-              <div class="row">
-                <div class="col">
-                  <div class="card" style="width: 18rem;">
-                    <img src="roman.png" class="card-img-top" height="80px" width="95px">
+    <div class="container my-5 text-center" style="max-width: 580px;">
+        <h1>Sushi per programmatori!</h1>
+        <p class="lead">Concediti ora una favolosa pausa ricca di sapore e di carbodrati. E' scientificamente provato: i nostri sushi rolls ti aiutano a scrivere un codice più performante.</p>
+        <button type="button" class="btn btn-primary">Ordina Subito!</button>
+        <button type="button" class="btn btn-secondary">Contattaci</button>
+    </div>
+   
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img src="./images/Amaebi.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">La pizza Diavola.</h5>
-                      <p class="card-text">Si tratta di Raffaele Esposito, un leggendario pizzaiolo napoletano, che nel lontano 1889 decise di affiancare alla Margherita la “nuova” Diavola.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title">AMAEBI</h5>
+                        <p class="card-text">E un gambero dolce in cui una traduzione diretta Amaebi,"ama" significa dolce, sono
+                                              particorlamente indicati da mangiare crudi in carpacci, tartare, sashimi e sushi.</p>
+                        <a href="#" class="btn btn-primary">Acquista</a>
                     </div>
-                  </div>
                 </div>
-                <div class="col">
-                  <div class="card" style="width: 18rem;">
-                    <img src="roman.png" class="card-img-top" height="80px" width="95px">
+            </div>
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img src="./images/California.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title"> La pizza Quattro Stagioni</h5>
-                      <p class="card-text">è nata proprio per riprendere quell'abitudine dei ricchi signori medievali di riempirsi il piatto con ogni ben di Dio; tant'è che alcune versioni della quattro stagioni prevedono anche l'aggiunta della salsiccia o di un uovo sodo.</p>
-
-
-
-
-
-            <!doctype html>
-            <html lang="en">
-            <head>
-            <!-- Required meta tags -->
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-
-            <!-- Bootstrap CSS -->
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-            <title>Pizza world!</title>
-            </head>
-            <body>
+                        <h5 class="card-title">CALIFORNIA</h5>
+                        <p class="card-text">Rotolo di riso con all' interno una foglia di nori che avvolge un ripieno di cetriolo, polpa
+                                            di granchio e avocado.
+                        </p>
+                        <a href="#" class="btn btn-primary">Acquista</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img src="./images/Cucumber.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">CUCUMBER</h5>
+                        <p class="card-text">
+                            E' un tipo di sushi che contiene un cetriolo, carote, cavolo viola e per condimento
+                            sale, olio e salsa di soia.
+                        </p>
+                        <a href="#" class="btn btn-primary">Acquista</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

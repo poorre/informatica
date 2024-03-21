@@ -1,0 +1,44 @@
+<div><br class="Apple-interchange-newline"><!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Array1</title>
+  </head>
+  <body>
+      <p id="out"></p>
+      <div>
+          <button id="b1" onclick="AddElementArray()">Aggiungi un drink</button>
+          <button id="b2" onclick="DeleteElementArray()">Cancella ultimo drink</button>
+          <button id="b3" onclick="CountElements()">Conta drink</button>
+          <p id="drinksOut"></p>
+      </div>
+      <script>
+          let a = "Array bar";
+          document.getElementById("out").innerHTML = a;
+
+          let drinks = ["Cola", "Tea", "Coffee", "Water", "Juice", "Beer"];
+          document.getElementById("drinksOut").innerHTML = drinks.join(", ");
+
+          function AddElementArray() {
+              let newDrink = prompt("Inserisci un drink");
+              drinks.push(newDrink);
+              document.getElementById("drinksOut").innerHTML = drinks.join(", ");
+          }
+
+          function DeleteElementArray() {
+              drinks.pop();
+              document.getElementById("drinksOut").innerHTML = drinks.join(", ");
+          }
+
+          function CountElements() {
+              let count = drinks.length;
+              alert("Il numero di drink nell'array è: " + count);
+          }
+
+          let orders = [3, 1, 4, 0, 2, 5];
+          let orderedDrinks = orders.map(order => drinks[order]);
+          document.getElementById("drinksOut").innerHTML = orderedDrinks.join(", ");
+      </script>
+  </body>
+  </html></div>

@@ -1,44 +1,75 @@
-<div><br class="Apple-interchange-newline"><!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Array1</title>
-  </head>
-  <body>
-      <p id="out"></p>
-      <div>
-          <button id="b1" onclick="AddElementArray()">Aggiungi un drink</button>
-          <button id="b2" onclick="DeleteElementArray()">Cancella ultimo drink</button>
-          <button id="b3" onclick="CountElements()">Conta drink</button>
-          <p id="drinksOut"></p>
-      </div>
-      <script>
-          let a = "Array bar";
-          document.getElementById("out").innerHTML = a;
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORDINI</title>
+</head>
+<body>
+  <h2>BEVANDE</h2>
+  <p id="drinksOut"></p>
+  <div>
+    <button id="addDrink">Aggiungi Bevanda</button>
+    <br><br>
+    <button id="removeDrink">Rimuovi Bevanda</button>
+    <br><br>
+    <button id="countDrink">Conta Bevande</button>
+    <br><br>
+    <button id="ordinaDrink">Effettua Ordine</button>
+  </div>
+  <p id="Ordini"></p>
+  <p id="conta"></p>
+  <br><br>
+  <p id="congratulazioni"></p>
+  <p id="dettagli"></p>
+  <p id="ordine"></p>
 
-          let drinks = ["Cola", "Tea", "Coffee", "Water", "Juice", "Beer"];
-          document.getElementById("drinksOut").innerHTML = drinks.join(", ");
+  <script>
+    let drinks = ["1) Mojito", "2) Margarita", "3) Negroni", "4) Spritz", "5) Pina Colada"];
+    let orders = [];
 
-          function AddElementArray() {
-              let newDrink = prompt("Inserisci un drink");
-              drinks.push(newDrink);
-              document.getElementById("drinksOut").innerHTML = drinks.join(", ");
-          }
+    function addItem(array, itemId) {
+      let index = parseInt(prompt("Inserisci il numero della bevanda da ordinare (1-" + drinks.length + "):")) - 1;
 
-          function DeleteElementArray() {
-              drinks.pop();
-              document.getElementById("drinksOut").innerHTML = drinks.join(", ");
-          }
+      while (isNaN(index) || index < 0 || index >= drinks.length) {
+        index = parseInt(prompt("Indice non valido. Inserisci un numero valido (1-" + drinks.length + "):")) - 1;
+      }
 
-          function CountElements() {
-              let count = drinks.length;
-              alert("Il numero di drink nell'array è: " + count);
-          }
+      const drink = drinks[index];
+      if (drink) {
+        orders.push(drink);
+        updateList(orders, itemId);
+      } else {
+        alert("Indice non valido. Nessuna bevanda aggiunta.");
+      }
+    }
 
-          let orders = [3, 1, 4, 0, 2, 5];
-          let orderedDrinks = orders.map(order => drinks[order]);
-          document.getElementById("drinksOut").innerHTML = orderedDrinks.join(", ");
-      </script>
-  </body>
-  </html></div>
+    function removeItem(array, itemId) {
+      array.pop();
+      updateList(array, itemId);
+    }
+
+    function countItems(array, itemId) {
+      const count = array.length;
+      updateList(array, itemId);
+      document.getElementById("conta").textContent = count;
+    }
+
+    function updateList(array, itemId) {
+      if (itemId == "ordine") {
+        document.getElementById("congratulazioni").textContent = "CONGRATULAZIONI! ORDINE EFFETTUATO CON SUCCESSO!";
+        document.getElementById("dettagli").textContent = "DETTAGLI DELL'ORDINE:";
+      }
+      document.getElementById(itemId).textContent = array.join(", ");
+    }
+
+    updateList(drinks, "drinksOut");
+    updateList(orders, "Ordini");
+
+    document.getElementById("addDrink").addEventListener("click", () => addItem(orders, "Ordini"));
+    document.getElementById("removeDrink").addEventListener("click", () => removeItem(orders, "Ordini"));
+    document.getElementById("countDrink").addEventListener("click", () => countItems(orders, "Ordini"));
+    document.getElementById("ordinaDrink").addEventListener("click", () => updateList(orders, "ordine"));
+  </script>
+</body>
+</html>

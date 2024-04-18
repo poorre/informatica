@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inserimento di numeri in un array</title>
+</head>
+<body>
 
+<div>
+<p id="output">
+
+
+</div>
+
+    <script>
+        let arrayNumeriInteri=[];
+        //CaricaArray();
+
+
+        let outputDiv=document.getElementById("output")
+
+
+
+        for(let numero=1;numero <=100;numero++)
+        {
+            let divisoriNumero=Divisori(numero);
+           
+            //console.log("Divisori di"+ numero+ ":"+divisoriNumero.join(" "));
+
+let divisoriString= "Divisori di "+numero+": "+ divisoriNumero.join(" ");
+outputDiv.innerHTML+="<p>"+divisoriString+ "</p>"
+
+        }
+
+
+    Divisori(50);
+        function CaricaArray()
+        {
+
+            for(let i =0;i<1000;i++)
+            {
+
+
+                arrayNumeriInteri.push(i);
+
+                console.log(arrayNumeriInteri)
+
+
+            }
+
+
+        }
+
+        function Divisori(n){
+            let divisori=[]
+            let massimodivisore=n/2;
+            
+            for(i=2;i<=massimodivisore;i++)
+            {
+                if (n%i==0)
+                {divisori.push(i)
+                }
+                
+
+
+            }
+            
+
+
+            if (divisori.length==0)
+            {
+                divisori.push("primo")
+            }
+
+            return divisori;
+
+        }
+
+
+
+
+    </script>
+</body>
+</html>

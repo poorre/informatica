@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrati colorati</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .square {
+            width: 30px;
+            height: 30px;
+            margin: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container"></div>
+    <script>
+        // Funzione per determinare se un numero è primo
+        function isPrime(n) {
+            let bPrime = true;
+            let factor = 2;
+            while (factor <= n / 2) {
+                if (n % factor == 0) {
+                    bPrime = false;
+                    break;
+                }
+                factor++;
+            }
+            return bPrime;
+        }
+
+        // Array per contenere i numeri consecutivi da 1000 in poi
+        let numeri = [];
+        for (let i = 1000; i < 2000; i++) {
+            numeri.push(i);
+        }
+
+        // Seleziona il container dei quadrati
+        let container = document.getElementById('container');
+
+        // Ciclo per creare 1000 quadrati e inserire i numeri
+        for (let i = 0; i < 1000; i++) {
+            let square = document.createElement('div');
+            square.textContent = numeri[i];
+            square.classList.add('square');
+
+            // Colorazione dei quadrati
+            if (numeri[i] % 2 == 0) {
+                square.style.backgroundColor = 'darkred'; // Numeri pari
+            } else {
+                square.style.backgroundColor = 'lightblue'; // Numeri dispari
+            }
+
+            // Colora di rosso chiaro i multipli di 7
+            if (numeri[i] % 7 == 0) {
+                square.style.backgroundColor = 'lightcoral';
+            }
+
+            // Colora di giallo i numeri primi
+            if (isPrime(numeri[i])) {
+                square.style.backgroundColor = 'yellow';
+            }
+
+            container.appendChild(square);
+        }
+    </script>
+</body>
+</html>

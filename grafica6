@@ -1,0 +1,35 @@
+<!DOCTYPE <html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafica 6</title>
+
+
+    <title>Contatore di click</title>
+    <script>
+        let contatore1 = 0;
+        let contatore2 = 0;
+
+        function contaClick(id) {
+            if (id === 1) {
+                contatore1++;
+                document.getElementById('count1').innerHTML = 'Cliccato ' + contatore1 + ' volta l\'immagine 1';
+            } else {
+                contatore2++;
+                document.getElementById('count2').innerHTML = 'Cliccato ' + contatore2 + ' volta l\'immagine 2';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <img src="https://www.ayvens.com/-/media/leaseplan-digital/it/public-pages/lpit-news/header_classifica-macchine-piu-costose.jpg?rev=555d7a5df9494abf99ce1d813c54b4b8&mw=3276" width="200px" onclick="contaClick(1)">
+        <p id="count1">Cliccato 0 volta l'immagine 1</p>
+    </div>
+    <div>
+        <img src=https://staticfanpage.akamaized.net/wp-content/uploads/sites/27/2021/02/GettyImages-845961450.jpg height="200px" onclick="contaClick(2)">
+        <p id="count2">Cliccato 0 volta l'immagine 2</p>
+    </div>
+</body>
+</html>

@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>quadrati n casuali </title>
+    <title>Quadrati con Numeri Casuali</title>
     <style>
         .square {
-            width: 50px;
-            height: 50px;
+            width: 100px;
+            height: 150px;
             margin: 5px;
             display: inline-block;
             text-align: center;
             line-height: 50px;
-            border: 1px solid black;
+            border: 1px solid blue;
         }
-       
-       
+        
+        
     </style>
 </head>
 <body>
@@ -24,13 +24,11 @@
     <button onclick="createSquares()">Crea Quadrati</button>
     <div id="container"></div>
 
-
     <script>
         function createSquares() {
             const n = document.getElementById('numberInput').value;
             const container = document.getElementById('container');
             container.innerHTML = ''; // Clear previous squares
-
 
             for (let i = 0; i < n; i++) {
                 const square = document.createElement('div');
@@ -38,11 +36,9 @@
                 const randomNum = Math.floor(Math.random() * 101) + 100;
                 square.textContent = randomNum;
 
-
                 if (randomNum % 10 === 0) {
                     square.classList.add('blue');
                 }
-
 
                 container.appendChild(square);
             }

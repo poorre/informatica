@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeri</title>
+    <style>
+        .square {
+            width: 100px;
+            height: 150px;
+            margin: 5px;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+            border: 1px solid blue;
+        }
+        .prime {
+            background-color: lightcoral;
+        }
+        .prime a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+
+
+    <script>
+        function isPrime(num) {
+            if (num <= 1) return false;
+            if (num === 2) return true;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+
+        function createPrimePage(num) {
+            const newWindow = window.open("", "_blank");
+            newWindow.document.write(`
+                <html>
+                    <head>
+                        <title>Prime Number</title>
+                        <style>
+                            body {
+                                font-size: 100px;
+                                color: red;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 100vh;
+                                margin: 0;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        Prime Number: ${num}
+                    </body>
+                </html>
+            `);
+        }
+
+
+        function createSquares() {
+            const container = document.getElementById('container');
+
+
+            for (let i = 1; i <= 1000; i++) {
+                const square = document.createElement('div');
+                square.className = 'square';
+                if (isPrime(i)) {
+                    square.classList.add('prime');
+                    const link = document.createElement('a');
+                    link.href = 'javascript:void(0);';
+                    link.textContent = i;
+                    link.onclick = () => createPrimePage(i);
+                    square.appendChild(link);
+                } else {
+                    square.textContent = i;
+                }
+
+
+                container.appendChild(square);
+            }
+        }
+
+
+        createSquares();
+    </script>
+</body>
+</html>
